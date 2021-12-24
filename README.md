@@ -5,9 +5,9 @@ Official code for ICCV paper "Digging into Uncertainty in Self-supervised Multi-
 
 ### 2021-12-24
 
- - The evaulation code of [U-MVS(MVSNet)](./u_mvs_mvsnet/README.md) is released.
+ - The evaulation code of [U-MVS(MVSNet)](./u_mvs_mvsnet/) is released.
  - The training code will be uploaded in a few days.
- - A toy example for understanding the `flow2mvs` module is provided in [toy_example_depth2flow](./toy_example_depth2flow/README.md).
+ - A toy example for understanding the `flow2mvs` module is provided in [toy_example_depth2flow](./toy_example_depth2flow/).
 
 ## Citation
 If you find this work is helpful to your work, please cite:
