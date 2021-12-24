@@ -20,17 +20,18 @@ Generally, we assume the object is static and the camera is moving in a multi-vi
 Inherited from the homography warping function: (More details are discussed in the paper)
 
 <!-- $$\hat{p}_{i}^{j}=\operatorname{Norm}\left[D_{j}\left(\hat{p}_{i}^{j}\right) \hat{p}_{i}^{j}\right] = \operatorname{Norm}\left[ K_{j} T_{j}\left(K_{1} T_{1}\right)^{-1} D_{1}\left(p_{i}\right) p_{i} \right], \text{ where } \operatorname{Norm}\left([x, y, z]^{T}\right)=[x / z, y / z, 1]^{T}$$ -->
-<img src="http://chart.googleapis.com/chart?cht=tx&chl= \hat{p}_{i}^{j}=\operatorname{Norm}\left[D_{j}\left(\hat{p}_{i}^{j}\right) \hat{p}_{i}^{j}\right] = \operatorname{Norm}\left[ K_{j} T_{j}\left(K_{1} T_{1}\right)^{-1} D_{1}\left(p_{i}\right) p_{i} \right], \text{ where } \operatorname{Norm}\left([x, y, z]^{T}\right)=[x / z, y / z, 1]^{T}" style="border:none;">
+![](./images/formula1.png)
+
 
 Given the definition of optical flow:
 <!-- $$\widehat{F}_{1 j}\left(p_{i}\right)=\hat{p}_{i}^{j}-p_{i}$$ -->
-<img src="http://chart.googleapis.com/chart?cht=tx&chl= \widehat{F}_{1 j}\left(p_{i}\right)=\hat{p}_{i}^{j}-p_{i}" style="border:none;">
+![](./images/formula2.png)
 
 We can easily transform the implicit stereo correspondence modeled in depth map to the 2D correspondence represented by optical flow:
 <!-- $$
 \widehat{F}_{1 j}\left(p_{i}\right)=\operatorname{Norm}\left[K_{j} T_{j}\left(K_{1} T_{1}\right)^{-1} D_{1}\left(p_{i}\right) p_{i}\right]-p_{i}
 $$ -->
-<img src="http://chart.googleapis.com/chart?cht=tx&chl= \widehat{F}_{1 j}\left(p_{i}\right)=\operatorname{Norm}\left[K_{j} T_{j}\left(K_{1} T_{1}\right)^{-1} D_{1}\left(p_{i}\right) p_{i}\right]-p_{i}" style="border:none;">
+![](./images/formula3.png)
 
 It is noted that the whole process is differentiable.
 
