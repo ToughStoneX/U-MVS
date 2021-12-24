@@ -8,11 +8,11 @@ Here we provide a direct example of the Depth2Flow module in the paper. The foll
     <img style="border-radius: 0.3125em;
     box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" 
     src="./images/virtual-cross-view-optical-flow2.png">
-    <br>
+    <!-- <br>
     <div style="color:orange; border-bottom: 1px solid #d9d9d9;
     display: inline-block;
     color: #999;
-    padding: 2px;">Intuition of Depth2Flow module.</div>
+    padding: 2px;">Intuition of Depth2Flow module.</div> -->
 </center>
 
 Generally, we assume the object is static and the camera is moving in a multi-view stereo system. Considering the relative motion between camera and object, the stereo correspondence decided by the homography warping function can further be viewed as a special case of moving object represented by optical flow.
@@ -82,46 +82,50 @@ You can modify the data path of the utilized DTU dataset with your own ones.
 
 ## Results
 
+Template flow field:
 <center>
     <img style="border-radius: 0.3125em;
     box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" 
     src="images/flow_field.png">
-    <br>
+    <!-- <br>
     <div style="color:orange; border-bottom: 1px solid #d9d9d9;
     display: inline-block;
     color: #999;
-    padding: 2px;">Template flow field.</div>
+    padding: 2px;">Template flow field.</div> -->
 </center>
 
+Scan1 of DTU:
 <center>
     <img style="border-radius: 0.3125em;
     box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" 
     src="images/example1.png">
-    <br>
+    <!-- <br>
     <div style="color:orange; border-bottom: 1px solid #d9d9d9;
     display: inline-block;
     color: #999;
-    padding: 2px;">Scan1 of DTU.</div>
+    padding: 2px;">Scan1 of DTU.</div> -->
 </center>
 
+Scan9 of DTU:
 <center>
     <img style="border-radius: 0.3125em;
     box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" 
     src="images/example2.png">
-    <br>
+    <!-- <br>
     <div style="color:orange; border-bottom: 1px solid #d9d9d9;
     display: inline-block;
     color: #999;
-    padding: 2px;">Scan9 of DTU.</div>
+    padding: 2px;">Scan9 of DTU.</div> -->
 </center>
 
+Scan11 of DTU:
 <center>
     <img style="border-radius: 0.3125em;
     box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" 
     src="images/example3.png">
-    <br>
+    <!-- <br>
     <div style="color:orange; border-bottom: 1px solid #d9d9d9;
     display: inline-block;
     color: #999;
-    padding: 2px;">Scan11 of DTU.</div>
+    padding: 2px;">Scan11 of DTU.</div> -->
 </center>
