@@ -3,6 +3,10 @@ Official code for ICCV paper "Digging into Uncertainty in Self-supervised Multi-
 
 ## Log
 
+### 2022-01-02
+
+ - [The training code](./u_mvs_mvsnet/) has been uploaded.
+
 ### 2021-12-24
 
  - The evaulation code of [U-MVS(MVSNet)](./u_mvs_mvsnet/) is released.
