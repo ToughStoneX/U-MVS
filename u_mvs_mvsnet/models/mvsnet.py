@@ -128,7 +128,6 @@ class MVSNet(nn.Module):
 
         # step 3. cost volume regularization
         cost_reg = self.cost_regularization(volume_variance)
-        # cost_reg = F.upsample(cost_reg, [num_depth * 4, img_height, img_width], mode='trilinear')
         cost_reg = cost_reg.squeeze(1)
         prob_volume = F.softmax(cost_reg, dim=1)
         depth = depth_regression(prob_volume, depth_values=depth_values)
@@ -145,10 +144,7 @@ class MVSNet(nn.Module):
         if not self.refine:
             return {"depth": depth, "photometric_confidence": photometric_confidence}
         else:
-            # refined_depth = self.refine_network(torch.cat((imgs[0], depth.unsqueeze(dim=1)), 1)).squeeze(dim=1)
             refined_depth = self.refine_network(imgs[0], depth)
-            # return {"depth": depth, "refined_depth": refined_depth,
-            #         "photometric_confidence": photometric_confidence}
             return {"depth": refined_depth, "photometric_confidence": photometric_confidence}
 
 

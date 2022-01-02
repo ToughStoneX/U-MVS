@@ -27,6 +27,10 @@ class FeatureNet(nn.Module):
 
 
 class UncertaintyNet(nn.Module):
+    """
+    This small CNN network is used to estimate the aleatoric uncertainty map.
+    The output of this network is the logarithmic aleatoric uncertainty.
+    """
     def __init__(self):
         super(UncertaintyNet, self).__init__()
         self.inplanes = 32
@@ -45,6 +49,11 @@ class UncertaintyNet(nn.Module):
 
 
 class CostRegNetDrop(nn.Module):
+    """
+    Cost volume regression network embeded with MC-Dropout.
+    Random dropout layers are appended to this network.
+    When estimating epistemic uncertainty, the dropout layers are enabled.
+    """
     def __init__(self):
         super(CostRegNetDrop, self).__init__()
         self.conv0 = ConvBnReLU3D(32, 8)
@@ -155,15 +164,11 @@ class MVSNet(nn.Module):
 
         # step 3. cost volume regularization
         cost_reg = self.cost_regularization(volume_variance)
-        # cost_reg = F.upsample(cost_reg, [num_depth * 4, img_height, img_width], mode='trilinear')
         cost_reg = cost_reg.squeeze(1)
         prob_volume = F.softmax(cost_reg, dim=1)
         depth = depth_regression(prob_volume, depth_values=depth_values)
 
         # step 4. regress variance
-        # print('volume_variance: {}'.format(volume_variance.shape))
-        # log_var = self.var_regression(volume_variance)
-        # print('ref_feature: {}'.format(ref_feature.shape))
         log_var = self.var_regression(ref_feature)
 
         with torch.no_grad():
@@ -178,10 +183,7 @@ class MVSNet(nn.Module):
         if not self.refine:
             return {"depth": depth, "photometric_confidence": photometric_confidence, "log_var": log_var}
         else:
-            # refined_depth = self.refine_network(torch.cat((imgs[0], depth.unsqueeze(dim=1)), 1)).squeeze(dim=1)
             refined_depth = self.refine_network(imgs[0], depth)
-            # return {"depth": depth, "refined_depth": refined_depth,
-            #         "photometric_confidence": photometric_confidence}
             return {"depth": refined_depth, "photometric_confidence": photometric_confidence, "log_var": log_var}
 
 

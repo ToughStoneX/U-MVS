@@ -5,12 +5,9 @@ import numpy as np
 from torchvision import transforms
 from PIL import ImageFilter
 
-from config import device
-
 
 def random_image_mask(img, filter_size):
     '''
-
     :param img: [B x 3 x H x W]
     :param crop_size:
     :return:

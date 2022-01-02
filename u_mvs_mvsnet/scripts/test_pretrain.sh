@@ -5,7 +5,6 @@ TESTLIST="lists/dtu/test.txt"
 OUTDIR="./outputs"
 
 gpuid=$1
-echo "utilizing ckpt {$ckptid} from {$ckptdir}"
 echo "start evaluation on DTU benchmark."
 echo "resolution: 1152 x 864"
 echo "utilizing default settings"
@@ -21,8 +20,3 @@ python test.py \
     --interval_scale 1.06  --filter_method gipuma \
     --num_consistent 3 --prob_threshold 0.8 --disp_threshold 0.3
 
-# depth fusion without gipuma
-#python test.py \
-#    --dataset=general_eval --batch_size=1 \
-#    --testpath=$TESTPATH  --testlist=$TESTLIST \
-#    --loadckpt $CKPT_FILE --outdir $OUTDIR  --interval_scale 1.06

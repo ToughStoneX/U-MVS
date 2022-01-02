@@ -4,12 +4,14 @@ import torch
 import torch.nn.functional as F
 
 
-# print arguments
-def print_args(args):
-    print("################################  args  ################################")
-    for k, v in args.__dict__.items():
-        print("{0: <10}\t{1: <30}\t{2: <20}".format(k, str(v), str(type(v))))
-    print("########################################################################")
+def print_args(opt):
+    message = ''
+    message += '----------------- Options ---------------\n'
+    for k, v in sorted(vars(opt).items()):
+        comment = ''
+        message += '{:>25}: {:<30}{}\n'.format(str(k), str(v), comment)
+    message += '----------------- End -------------------'
+    print(message)
 
 
 # torch.no_grad warpper for functions
