@@ -4,7 +4,8 @@
 
 MVSNet is utilized as the backbone in default.
 The pretrained weight is provided for a fast evaluation.
-The training code will come in a few days.
+~~The training code will come in a few days~~.
+The training code has been uploaded.
 
 ## How to use?
 
