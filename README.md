@@ -5,7 +5,7 @@ Official code for ICCV paper "Digging into Uncertainty in Self-supervised Multi-
 
 ### 2022-01-12
 
- - The evaluation code of [U-MVS(CasMVSNet)](./u_cas_mvsnet/) is released.
+ - The evaluation code of [U-MVS(CasMVSNet)](./u_mvs_casmvsnet/) is released.
  - The training code will be uploaded later.
 
 ### 2022-01-02
