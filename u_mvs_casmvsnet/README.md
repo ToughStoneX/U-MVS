@@ -79,3 +79,7 @@ unzipped_data_directory ($TESTPATH)
  - The results will be saved in `./outputs` directory.
  - Run `bash scripts/arange.sh`.
  - Evaluate the perfomance on DTU benchmark following the instructions in the `Benchmark results on DTU` section of [u_mvs_mvsnet](../u_mvs_mvsnet).
+
+## Note
+
+ - It is suggested to use pytorch 1.2.0-1.4.0. The newest ones like pytorch 1.9.0 may fail to reproduce the same results.
