@@ -60,3 +60,22 @@ upload_directory
    - The `t2_submission_credentials.txt` and `upload_t2_results.py` should be obtained from official website： [Tanks&Temples](https://www.tanksandtemples.org/).
    - To submite the results, you can type the command: `python upload_t2_results.py --group (intermediate/advanced/both)`. Select each one of `intermediate`, `advanced`, `both` if you want to upload the results of intermediate dataset or advanced dataset or both.
    - After submitting the results, you can click the evaluation button on the official site of Tanks&Temples and wait for several hours. The evaluation results will be sent to your registered e-mail box once the evaluation is finished.
+
+### Evaluating pretrained model on DTU benchmark
+
+ - Download preprocessed dataset: [DTU](https://drive.google.com/file/d/135oKPefcPTsdtLRzoDAQtPpHuoIrpRI_/view) and unzip it as the $TESTPATH folder which is organized as follows:
+
+```
+unzipped_data_directory ($TESTPATH)
+ |--dtu
+     |-- scan1
+     |-- scan4
+     |-- ...
+```
+ - Modify the `$TESTPATH` in `test_pretrained.sh` according to the exact path in your machine.
+ - Prepare the `fusibile` following the instructions in the `fusion` section of [u_mvs_mvsnet](../u_mvs_mvsnet).
+ - Run the script: `bash scripts/test_pretrained.sh high`.
+   - Hyperparameters: `num_consistent`, `prob_threshold`, `disp_threshold` can be modified by your own.
+ - The results will be saved in `./outputs` directory.
+ - Run `bash scripts/arange.sh`.
+ - Evaluate the perfomance on DTU benchmark following the instructions in the `Benchmark results on DTU` section of [u_mvs_mvsnet](../u_mvs_mvsnet).
