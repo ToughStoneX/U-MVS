@@ -4,7 +4,11 @@
 
 CascadeMVSNet is utilized as the backbone.
 The pretrained weight is provided for a fast evaluation.
-The training code will come in a few days.
+The training code will be uploaded later.
+
+### Note 
+
+ - It is suggested to use pytorch 1.2.0-1.4.0. The newest ones like pytorch 1.9.0 may fail to reproduce the same results. Please check the environment before running the evaluation code.
 
 ## How to use?
 
