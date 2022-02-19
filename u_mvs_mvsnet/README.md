@@ -7,6 +7,10 @@ The pretrained weight is provided for a fast evaluation.
 ~~The training code will come in a few days~~.
 The training code has been uploaded.
 
+### Note 
+
+ - It is suggested to use pytorch 1.2.0-1.4.0. The newest ones like pytorch 1.9.0 may fail to reproduce the same results. Please check the environment before running the evaluation code.
+
 ## How to use?
 
 ### Environment
@@ -92,8 +96,3 @@ As the paper suggests, our U-MVS is separated into two stages: self-supervised p
 
  1. For evaluation, you can run `bash scripts/test.sh`. The setting of this script is the same as the aforementioned settings when evaluating the pretrained model.
  2. You can modify the `CKPT_FILE` with the absolute path of target model, for example: `CKPT_FILE="./checkpoints/selfsup_pretrain-2021-12-25/model_00065000.ckpt"` and `CKPT_FILE="./checkpoints/pselbl_postrain-2021-12-31/model_00040000.ckpt"`.
-
-
-### Note 
-
- - It is suggested to use pytorch 1.2.0-1.4.0. The newest ones like pytorch 1.9.0 may fail to reproduce the same results.
